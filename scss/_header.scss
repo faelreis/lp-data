@@ -17,8 +17,8 @@ header{
         }
         button{
             border-radius: 50px;
-            border: 0.1rem solid #ECECEC;
-            background: #ECECEC;
+            border: 0.1rem solid $white;
+            background: $white;
             padding: 0.8rem 2rem;
             @include transitionEase;
         }
@@ -27,13 +27,13 @@ header{
         }
         .btn-download:hover{
             background-color: transparent;
-            color: #ECECEC;
+            color: $white;
         }
         .btn-login{
             background-color: transparent;
         }
         .btn-login:hover{
-            background-color: #ECECEC;
+            background-color: $white;
             color: #0B081C;
         }
         nav{
