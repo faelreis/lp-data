@@ -8,3 +8,9 @@
 @mixin transitionEase{
     transition: all ease .3s;
 }
+
+@mixin media($size){
+    @media(max-width: $size){
+        
+    }
+}

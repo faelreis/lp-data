@@ -1,43 +1,100 @@
 header{
+    top: 0;
+    position: sticky;
+    background-color: $main-color;
+    z-index: 10;
     padding: 2.4rem 0rem;
     .container{
-        @include flex(center, space-between, row);
+        @include flex(center, space-between, center);
+        a{
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 150%;
+            @include transitionEase;
+        }
+        a:hover{
+            opacity: 60%;
+        }
+        button{
+            border-radius: 50px;
+            border: 0.1rem solid #ECECEC;
+            background: #ECECEC;
+            padding: 0.8rem 2rem;
+            @include transitionEase;
+        }
+        .btn-download{
+            color: #0B081C;
+        }
+        .btn-download:hover{
+            background-color: transparent;
+            color: #ECECEC;
+        }
+        .btn-login{
+            background-color: transparent;
+        }
+        .btn-login:hover{
+            background-color: #ECECEC;
+            color: #0B081C;
+        }
         nav{
-            ul{
+            .menu-desktop{
                 @include flex(center, space-between, row);
                 gap: 3rem;
-                li{
-                    a{
-                        font-size: 1.6rem;
-                        font-weight: 400;
-                        line-height: 150%;
-                        @include transitionEase;
+            }
+             }
+             .menu-mobile{
+                display: none;
+             }
+}
+}
+
+@media(max-width:835px){
+    header{
+        .container{
+            nav{
+                .menu-desktop{
+                    display: none;
+                }
+                .menu-mobile{
+                    transition: all ease .3s;
+                    .menu-icon{
+                        transition: all ease .5s;
                     }
-                    a:hover{
-                        opacity: 60%;
+                    .menu-icon.active{
+                        transform: rotate(90deg);
                     }
-                    button{
-                        border-radius: 50px;
-                        border: 0.1rem solid #ECECEC;
-                        background: #ECECEC;
-                        padding: 0.8rem 2rem;
-                        @include transitionEase;
+                    @include flex(center, space-between, column);
+                    .items-menu-mobile{
+                        display: none;
+                        position: absolute;
+                        width: 100%;
+                        top: 70px;
+                        right: 0px;
+                        text-align: center;
+                        background-color: #0B081C;
+                        padding: 30px 0px 40px 0px;
+                        border-radius: 0px 0px 30px 30px;
+                        li{
+                            margin-bottom: 30px;
+                        }
+                        li:last-child{
+                            margin-bottom: 0px;
+                        }
                     }
-                    .btn-download{
-                        color: #0B081C;
-                    }
-                    .btn-download:hover{
-                        background-color: transparent;
-                        color: #ECECEC;
-                    }
-                    .btn-login{
-                        background-color: transparent;
-                    }
-                    .btn-login:hover{
-                        background-color: #ECECEC;
-                        color: #0B081C;
+                    .items-menu-mobile.active{
+                        display: block;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media(max-width: 260px){
+    header{
+        .container{
+            .logo{
+                width: 60%;
             }
         }
     }

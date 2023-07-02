@@ -26,7 +26,7 @@ img {
 }
 
 body {
-  background-color: #0B0121;
+  background-color: #241641;
 }
 
 .container {
@@ -84,6 +84,10 @@ body {
 }
 
 header {
+  top: 0;
+  position: sticky;
+  background-color: #0B0121;
+  z-index: 10;
   padding: 2.4rem 0rem;
 }
 header .container {
@@ -96,12 +100,44 @@ header .container {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -ms-flex-direction: center;
+  flex-direction: center;
 }
-header .container nav ul {
+header .container a {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 150%;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+header .container a:hover {
+  opacity: 60%;
+}
+header .container button {
+  border-radius: 50px;
+  border: 0.1rem solid #ECECEC;
+  background: #ECECEC;
+  padding: 0.8rem 2rem;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+header .container .btn-download {
+  color: #0B081C;
+}
+header .container .btn-download:hover {
+  background-color: transparent;
+  color: #ECECEC;
+}
+header .container .btn-login {
+  background-color: transparent;
+}
+header .container .btn-login:hover {
+  background-color: #ECECEC;
+  color: #0B081C;
+}
+header .container nav .menu-desktop {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,35 +153,62 @@ header .container nav ul {
   flex-direction: row;
   gap: 3rem;
 }
-header .container nav ul li a {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 150%;
-  -webkit-transition: all ease 0.3s;
-  transition: all ease 0.3s;
+header .container .menu-mobile {
+  display: none;
 }
-header .container nav ul li a:hover {
-  opacity: 60%;
+
+@media (max-width: 835px) {
+  header .container nav .menu-desktop {
+    display: none;
+  }
+  header .container nav .menu-mobile {
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  header .container nav .menu-mobile .menu-icon {
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+  header .container nav .menu-mobile .menu-icon.active {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  header .container nav .menu-mobile .items-menu-mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    text-align: center;
+    background-color: #0B081C;
+    padding: 30px 0px 40px 0px;
+    border-radius: 0px 0px 30px 30px;
+  }
+  header .container nav .menu-mobile .items-menu-mobile li {
+    margin-bottom: 30px;
+  }
+  header .container nav .menu-mobile .items-menu-mobile li:last-child {
+    margin-bottom: 0px;
+  }
+  header .container nav .menu-mobile .items-menu-mobile.active {
+    display: block;
+  }
 }
-header .container nav ul li button {
-  border-radius: 50px;
-  border: 0.1rem solid #ECECEC;
-  background: #ECECEC;
-  padding: 0.8rem 2rem;
-  -webkit-transition: all ease 0.3s;
-  transition: all ease 0.3s;
-}
-header .container nav ul li .btn-download {
-  color: #0B081C;
-}
-header .container nav ul li .btn-download:hover {
-  background-color: transparent;
-  color: #ECECEC;
-}
-header .container nav ul li .btn-login {
-  background-color: transparent;
-}
-header .container nav ul li .btn-login:hover {
-  background-color: #ECECEC;
-  color: #0B081C;
+@media (max-width: 260px) {
+  header .container .logo {
+    width: 60%;
+  }
 }
