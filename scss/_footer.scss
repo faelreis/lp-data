@@ -1,0 +1,16 @@
+footer{
+    padding: 50px 0px;
+    border-top: solid 1px #E6E6E620;
+    .container{
+        @include flex(center, center, row);
+        a{
+            text-align: center;
+            font-weight: 400;
+            transition: all .3s ease;
+            cursor: pointer;
+            &:hover{
+                opacity: 60%;
+            }
+        }
+    }
+}
